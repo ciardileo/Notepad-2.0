@@ -13,7 +13,7 @@ class TextBox():
 
         # textbox frame 
 
-        self.text_frame = Frame(self.main, bg='gray')
+        self.text_frame = Frame(self.main)
         self.text_frame.pack(fill=BOTH, expand=True)
 
         # vertical scrollbar
@@ -23,18 +23,22 @@ class TextBox():
 
         # textbox
 
-        self.text_box = Text(self.text_frame)
+        self.text_box = Text(self.text_frame, yscrollcommand=self.vertical_scroll.set, font='OpenSans 12')
         self.text_box.pack(fill=BOTH, padx=5, expand=True)
 
         # configure vertical scrollbar
 
         self.vertical_scroll.configure(command=self.text_box.yview)
 
+        # bottom frame
+
+        self.bottom_frame = Frame(self.main)
+        self.bottom_frame.pack(fill=X)
+
         # path label
 
-        self.path_lb = Label(self.text_frame, text='Test         ', bg='gray')
+        self.path_lb = Label(self.bottom_frame, text='Path         ')
         self.path_lb.pack(fill=X, side=RIGHT)
-
 
 
 

@@ -21,21 +21,16 @@ class Notepad():
         # window
 
         self.main = Tk()
-        self.main.geometry('900x450')
-        self.main['bg'] = 'gray'
-        self.main.title('Notepad 2.0')
+        self.main.geometry('900x480')
+        self.main.title('untiled - Notepad 2.0')
+
+        # creating the toolbar
+
+        # toolbar.Toolbar(self.main)
 
         # creating the menu
 
         menu.MenuBar(self.main)
-
-        # creating the toolbar
-
-        toolbar.Toolbar(self.main)
-
-        # creating the textbox
-
-        textbox.TextBox(self.main)
 
         # executing the window
 
